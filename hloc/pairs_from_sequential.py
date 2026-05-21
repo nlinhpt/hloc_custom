@@ -12,7 +12,7 @@ def main(
     output: Path,
     image_list: Optional[Union[Path, List[str]]] = None,
     features: Optional[Path] = None,
-    window_size: int = 5,
+    window_size: int = 10,
 ):
     # ==================================================
     # Read image names
