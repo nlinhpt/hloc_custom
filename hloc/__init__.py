@@ -34,3 +34,5 @@ else:
                 found_version,
                 s,
             )
+
+from . import pairs_from_sequential
