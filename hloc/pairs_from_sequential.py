@@ -12,8 +12,10 @@ def main(
     output: Path,
     image_list: Optional[Union[Path, List[str]]] = None,
     features: Optional[Path] = None,
-    window_size: int = 10,
+    overlap: int = 10,
 ):
+    window_size = overlap # Number of subsequent frames to pair with each image
+    
     # ==================================================
     # Read image names
     # ==================================================
@@ -57,7 +59,7 @@ if __name__ == "__main__":
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--image_list", type=Path)
     parser.add_argument("--features", type=Path)
-    parser.add_argument("--window_size", type=int, default=5)
+    parser.add_argument("--overlap", type=int, default=5) # change window size here
     
     args = parser.parse_args()
     main(**args.__dict__)
